@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="card">
+    <header>
+      <button (click)="handleGoBack()">
+        <img src="assets/arrow-left.svg">
+      </button>
+      <img src="http://placehold.it/32x32" alt="">
+      <div class="column">
+        <h2>{{establishment.name}}</h2>
+        <p>ID: {{establishment.id}}</p>
+      </div>
+    </header>
+    <legend>Informações Básicas</legend>
+    <div class="separator"></div>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+      <div class="row">
+        <div class="input-column">
+          <label for="name">
+            Name
+          </label>
+          <input id="name" type="text" formControlName="name">
+        </div>
+        <div class="input-column">
+          <label for="city">
+            Cidade
+          </label>
+          <input id="city" type="text" formControlName="city">
+        </div>
+        <div class="input-column">
+          <label for="address">
+            Endereço
+          </label>
+          <input id="address" type="text" formControlName="address">
+        </div>
+      </div>
+
+      <legend>Financeiro</legend>
+      <div class="separator"></div>
+
+      <div class="row">
+        <div class="input-column">
+          <label for="bank">
+            Banco
+          </label>
+          <div id="bank" class="select">
+            <select formControlName="bank">
+              <option value="corrente">Banco do Brasil S.A.</option>
+              <option value="corrente">Banco Santander (Brasil) S.A.</option>
+              <option value="corrente">Banco Bradesco BBI S.A.</option>
+              <option value="corrente">Banco Itaú BBA S.A.</option>
+              <option value="corrente">Citibank N.A.</option>
+              <option value="corrente">Nubank</option>
+              <option value="poupanca">Inter</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-column">
+          <label for="accountType">
+            Tipo de conta
+          </label>
+          <div id="bank" class="select">
+            <select formControlName="accountType">
+              <option value="corrente">Conta corrente</option>
+              <option value="poupanca">Poupanca</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-column">
+          <label for="document">
+            CPF / CNPJ
+          </label>
+        <input id="document" type="text" [mask]="document" (keyup)="documentChange($event)" formControlName="document">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-column">
+          <label for="agency">
+            Agência
+          </label>
+          <div class="row">
+            <input id="agency" type="number" formControlName="agency">
+            <input maxlength="1" id="digit" class="digit" type="number" formControlName="agencyDigit">
+          </div>
+
+        </div>
+        <div class="input-column">
+          <label for="account">
+            Conta
+          </label>
+          <div class="row">
+            <input id="account" type="number" formControlName="account">
+            <input maxlength="1" id="digit" class="digit" type="number" formControlName="accountDigit">
+          </div>
+
+        </div>
+        <div class="input-column">
+          <label for="withdrawal">
+           Saque automatico?
+          </label>
+          <div id="withdrawal" class="select">
+            <select formControlName="autoWithdrawal">
+              <option value="sim">Sim</option>
+              <option value="nao">Nao</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="button" type="submit">SALVAR</button>
+    </form>
+  </div>
+</div>

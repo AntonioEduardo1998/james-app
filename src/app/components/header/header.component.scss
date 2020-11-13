@@ -1,0 +1,14 @@
+header {
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  margin-bottom: 50px;
+  background: #ffffff;
+
+  img {
+    cursor: pointer;
+  }
+}
