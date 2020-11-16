@@ -1,4 +1,7 @@
 <div class="container">
+  <div *ngIf="success" class="success-card">
+    Estabelecimento salvo com sucesso!
+  </div>
   <div class="card">
     <header>
       <button (click)="handleGoBack()">
@@ -24,7 +27,7 @@
           <label for="city">
             Cidade
           </label>
-          <input id="city" type="text" formControlName="city">
+          <input  id="city" type="text" formControlName="city">
         </div>
         <div class="input-column">
           <label for="address">
@@ -44,13 +47,13 @@
           </label>
           <div id="bank" class="select">
             <select formControlName="bank">
-              <option value="corrente">Banco do Brasil S.A.</option>
-              <option value="corrente">Banco Santander (Brasil) S.A.</option>
-              <option value="corrente">Banco Bradesco BBI S.A.</option>
-              <option value="corrente">Banco Itaú BBA S.A.</option>
-              <option value="corrente">Citibank N.A.</option>
-              <option value="corrente">Nubank</option>
-              <option value="poupanca">Inter</option>
+              <option value="Banco do Brasil S.A.">Banco do Brasil S.A.</option>
+              <option value="Banco Santander (Brasil) S.A.">Banco Santander (Brasil) S.A.</option>
+              <option value="Banco Bradesco BBI S.A.">Banco Bradesco BBI S.A.</option>
+              <option value="Banco Itaú BBA S.A.">Banco Itaú BBA S.A.</option>
+              <option value="Citibank N.A.">Citibank N.A.</option>
+              <option value="Nubank">Nubank</option>
+              <option value="Inter">Inter</option>
             </select>
           </div>
         </div>
@@ -58,7 +61,7 @@
           <label for="accountType">
             Tipo de conta
           </label>
-          <div id="bank" class="select">
+          <div id="accountType" class="select">
             <select formControlName="accountType">
               <option value="corrente">Conta corrente</option>
               <option value="poupanca">Poupanca</option>
@@ -69,7 +72,7 @@
           <label for="document">
             CPF / CNPJ
           </label>
-        <input id="document" type="text" [mask]="document" (keyup)="documentChange($event)" formControlName="document">
+        <input id="document" type="text" [mask]="document" (keypress)="documentChange($event)" formControlName="document">
         </div>
       </div>
       <div class="row">

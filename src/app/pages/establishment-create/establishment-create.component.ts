@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import Establishment from 'src/app/models/Establishment';
 import { EstablishmentService } from 'src/app/services/establishment.service';
 
+
 @Component({
   selector: 'app-establishment-create',
   templateUrl: './establishment-create.component.html',
@@ -12,6 +13,7 @@ import { EstablishmentService } from 'src/app/services/establishment.service';
 export class EstablishmentCreateComponent implements OnInit {
   public checkoutForm;
   public items;
+  public success: boolean;
 
   public establishment: Establishment;
   public document: string;
@@ -33,6 +35,14 @@ export class EstablishmentCreateComponent implements OnInit {
 
       let agency = [];
       let account = [];
+      this.success = false;
+
+      if(this.establishment.document && this.establishment.document.length > 11){
+        this.document = '00.000.000/0000-00';
+      }else{
+        this.document = '000.000.000-00';
+      }
+
 
       if(this.establishment.agency){
         agency = this.establishment.agency.split('-');
@@ -63,7 +73,11 @@ export class EstablishmentCreateComponent implements OnInit {
 
     // this.checkoutForm.reset();
 
-    console.log('Your order has been submitted', customerData);
+    this.success = true;
+
+    setTimeout(() => {
+      this.success = false
+    },3000)
 
 
     this.establishment = {
@@ -89,12 +103,13 @@ export class EstablishmentCreateComponent implements OnInit {
 
   public documentChange(event){
     const value = (event.target as HTMLInputElement).value;
+    console.log(value.length)
     if(value.length < 14){
       this.document = '000.000.000-00';
     }else{
       this.document = '00.000.000/0000-00';
     }
-    console.log(value)
   }
+
 
 }

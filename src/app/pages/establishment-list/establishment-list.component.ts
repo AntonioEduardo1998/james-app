@@ -10,6 +10,7 @@ import { EstablishmentService } from 'src/app/services/establishment.service';
 export class EstablishmentListComponent implements OnInit {
 
   public establishments: Establishment[];
+  public loading: boolean = false;
 
   constructor(private establishmentService: EstablishmentService) { }
 
@@ -17,8 +18,10 @@ export class EstablishmentListComponent implements OnInit {
     this.establishments = JSON.parse(localStorage.getItem('@establishments'));
 
     if(!this.establishments){
+      this.loading = true;
       this.establishmentService.setEstablishments().subscribe(establishments => {
         this.establishments = establishments;
+        this.loading = false;
       });
     }
   }

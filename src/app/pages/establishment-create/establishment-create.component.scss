@@ -1,3 +1,4 @@
+
 .container {
   padding-top: 80px;
   display: flex;
@@ -159,4 +160,25 @@
       }
     }
   }
+}
+
+@keyframes mymove {
+  0% {top: -100%}
+  100% {top: 0deg;}
+}
+
+.success-card {
+  width: 300px;
+  background: rgb(135, 61, 235);
+  opacity: 0.5;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 15px;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  border-radius: 5px;
+
+  animation: mymove 0.5s ease-in-out;
+
 }

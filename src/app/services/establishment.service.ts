@@ -30,6 +30,5 @@ export class EstablishmentService {
 
     localStorage.setItem('@establishments', JSON.stringify(data));
 
-    console.log('Deu boa')
   }
 }

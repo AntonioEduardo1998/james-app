@@ -1,27 +1,26 @@
 # JamesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Este projeto foi gerado com o Angular CLI versão 10.2.0.
+Projeto de desafio teste para o processo seletivo da vaga de desenvolvedor front-end do James Delivery por Antonio Eduardo R Oliveira.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Download do projeto
 
-## Code scaffolding
+Com o git instalado em sua máquina basta rodar o comando: `git clone https://github.com/AntonioEduardo1998/james-app.git`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Instalação das dependências 
 
-## Build
+Com o NodeJS instalado na sua máquina, acesse o diretório do projeto e execute o comando `npm install` para instalar todas as dependências necessárias.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Se necessário instalar também o Angular CLI versão 10 com o comando: `npm install -g @angular/cli@10.2.0`
 
-## Running unit tests
+# Execução do projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Depois de instalar as dependências necessárias, basta acessar a pasta do projeto e executar o comando
+`ng serve` ou `ng serve --open` para abrir de forma automática o projeto no navegador. O projeto pode ser acessado navegando até `http://localhost:4200/`.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# Build do projeto
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para gerar uma build de produção para o projeto basta acessar a pasta onde o projeto esta instalado e executar
+o comando `ng build --prod`. Em seguida a build do projeto poderá ser encontrada em `/dist/james-app`
